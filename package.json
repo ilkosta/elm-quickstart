@@ -1,17 +1,31 @@
 {
   "name": "webtools-elm",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "",
   "main": "index.js",
   "scripts": {
     "watch": "sh -c 'alacritty -e tmux new -s build elm-live src/*.elm --open --pushstate --output dist/bundle.js --debug -- --warn' &",
-    "test": "elm-test"
+    "test": "elm-test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "git-cz"
   },
-  "author": "",
+  "author": "Costantino Giuliodori (ilkosta)",
   "license": "ISC",
   "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "elm": "^0.18.0",
     "elm-live": "^2.6.0",
-    "elm-test": "^0.17.3"
+    "elm-test": "^0.17.3",
+    "semantic-release": "^6.3.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilkosta/elm-quickstart.git"
+  },
+  "config" : {
+    "commitizen" : {
+      "path" : "cz-conventional-changelog"
+    }
   }
 }
